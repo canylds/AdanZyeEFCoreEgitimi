@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseFirst", "DatabaseFi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson9", "Lesson9\Lesson9.csproj", "{B660E372-2781-40A0-80DD-7C282AFB0869}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistingTheData", "PersistingTheData\PersistingTheData.csproj", "{246D2D1E-2444-493A-85DD-F989922846D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B660E372-2781-40A0-80DD-7C282AFB0869}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B660E372-2781-40A0-80DD-7C282AFB0869}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B660E372-2781-40A0-80DD-7C282AFB0869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{246D2D1E-2444-493A-85DD-F989922846D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{246D2D1E-2444-493A-85DD-F989922846D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{246D2D1E-2444-493A-85DD-F989922846D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{246D2D1E-2444-493A-85DD-F989922846D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
