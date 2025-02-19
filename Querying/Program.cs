@@ -27,18 +27,18 @@ internal class Program
         #endregion
         #endregion
 
-        int urunId = 0;
-        string urunAdi = "2";
+        //int urunId = 0;
+        //string urunAdi = "2";
 
-        var urunler = from urun in context.Urunler where urun.Id > urunId && urun.UrunAdi.Contains(urunAdi) select urun;
+        //var urunler = from urun in context.Urunler where urun.Id > urunId && urun.UrunAdi.Contains(urunAdi) select urun;
 
-        urunId = 5;
-        urunAdi = "X";
+        //urunId = 5;
+        //urunAdi = "X";
 
-        foreach (Urun urun in urunler)
-        {
-            Console.WriteLine(urun.UrunAdi);
-        }
+        //foreach (Urun urun in urunler)
+        //{
+        //    Console.WriteLine(urun.UrunAdi);
+        //}
 
         //urunler.ToListAsync();
 
@@ -65,6 +65,47 @@ internal class Program
         #endregion
         //var urunler = from urun in context.Urunler select urun;
         //var urunler = await (from urun in context.Urunler select urun).ToListAsync();
+        #endregion
+
+        #region Çoğul Veri Getiren Sorgulama Fonksiyonları
+        #region ToListAsync
+        //Üretilen sorguyu execute ettirmemizi sağlayan bir fonksiyondur.
+        //var urunler = await context.Urunler.ToListAsync();
+        //var urunler = await (from urun in context.Urunler select urun).ToListAsync();
+
+        //var urunler = from urun in context.Urunler select urun;
+        //var datas = await urunler.ToListAsync();
+        #endregion
+
+        #region Where
+        //Oluşturulan soruya where şartı eklememizi sağlayan bir fonksiyondur.
+        //var urunler = await context.Urunler.Where(u => u.Id > 500).ToListAsync();
+        //var urunler = await context.Urunler.Where(u => u.UrunAdi.StartsWith("a")).ToListAsync();
+
+        //var urunler = from urun in context.Urunler where urun.Id > 500 && urun.UrunAdi.EndsWith("7") select urun;
+        //var data = await urunler.ToListAsync();
+        #endregion
+
+        #region OrderBy
+        //Sorgu üzerinde sıralama yapmamızı sağlayan bir fonksiyondur.
+        //var urunler = context.Urunler.Where(u => u.Id > 3 || u.UrunAdi.EndsWith("ü")).OrderBy(u => u.UrunAdi);
+        //var data = await urunler.ToListAsync();
+
+        //var urunler = from urun in context.Urunler where urun.Id > 3 || urun.UrunAdi.EndsWith("ü") orderby urun.UrunAdi select urun;
+        //var urunler = from urun in context.Urunler where urun.Id > 3 || urun.UrunAdi.EndsWith("ü") orderby urun.UrunAdi ascending select urun;
+        //var data = await urunler.ToListAsync();
+
+        #region ThenBy
+        //OrderBy üzerinde yapılan sıralama işlemini farklı kolonlara da uygulamamızı sağlayan bir fonksiyondur. (Ascending)
+        //var urunler = context.Urunler.Where(u => u.Id > 3 || u.UrunAdi.EndsWith("ü")).OrderBy(u => u.UrunAdi).ThenBy(u => u.Fiyat).ThenBy(u => u.Id);
+        //var data = await urunler.ToListAsync();
+        #endregion
+        #endregion
+
+        #region OrderByDescending
+        //Descending olarak sıralama yapmamızı sağlar.
+        //ThenByDescending de mevcuttur.
+        #endregion
         #endregion
     }
 }
