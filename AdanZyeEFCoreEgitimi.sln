@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistingTheDataUpdate", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistingTheDataDelete", "PersistingTheDataDelete\PersistingTheDataDelete.csproj", "{073ED577-AD80-41A2-9B7C-832141C51547}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Querying", "Querying\Querying.csproj", "{5CD3CE8C-5968-4699-8F65-957FE4DAB03F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{073ED577-AD80-41A2-9B7C-832141C51547}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{073ED577-AD80-41A2-9B7C-832141C51547}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{073ED577-AD80-41A2-9B7C-832141C51547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CD3CE8C-5968-4699-8F65-957FE4DAB03F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CD3CE8C-5968-4699-8F65-957FE4DAB03F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CD3CE8C-5968-4699-8F65-957FE4DAB03F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CD3CE8C-5968-4699-8F65-957FE4DAB03F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
