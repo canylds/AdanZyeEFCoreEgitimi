@@ -107,6 +107,82 @@ internal class Program
         //ThenByDescending de mevcuttur.
         #endregion
         #endregion
+
+        #region Tekil Veri Getiren Sorgulama Fonksiyonları
+        //Yapılan sorguda sadece ve sadece tek bir verinin gelmesi amaçlanıyorsa Single ya da SingleOrDefault fonksiyonları kullanılabilir.
+        #region SingleAsync
+        //Eğer sorgu neticesinde birden fazla veri geliyorsa ya da hiç gelmiyorsa her iki durumda da exception fırlatır.
+        #region Tek Kayıt Geldiğinde
+        //var urun = await context.Urunler.SingleAsync(u => u.Id == 15);
+        #endregion
+        #region Hiç Kayıt Gelmediğinde
+        //var urun = await context.Urunler.SingleAsync(u => u.Id == 1515);
+        #endregion
+        #region Birden Çok Kayıt Geldiğinde
+        //var urun = await context.Urunler.SingleAsync(u => u.Id > 15);
+        #endregion
+        #endregion
+
+        #region SingleOrDefaultAsync
+        //Eğer sorgu neticesinde birden fazla veri geliyorsa exception fırlatır, hiç veri gelmiyorsa null döner.
+        #region Tek Kayıt Geldiğinde
+        //var urun = await context.Urunler.SingleOrDefaultAsync(u => u.Id == 15);
+        #endregion
+        #region Hiç Kayıt Gelmediğinde
+        //var urun = await context.Urunler.SingleOrDefaultAsync(u => u.Id == 1515);
+        #endregion
+        #region Birden Çok Kayıt Geldiğinde
+        //var urun = await context.Urunler.SingleOrDefaultAsync(u => u.Id > 15);
+        #endregion
+        #endregion
+
+        //Yapılan sorguda tek bir verinin gelmesi amaçlanıyorsa First ya da FirstOrDefault fonksiyonları kullanılabilir.
+        #region FirstAsync
+        //Sorgu neticesinde elde edilen verilerden ilkini getirir. Eğer ki hiç veri gelmiyorsa hata fırlatır.
+        #region Tek Kayıt Geldiğinde
+        //var urun = await context.Urunler.FirstAsync(u => u.Id == 15);
+        #endregion
+        #region Hiç Kayıt Gelmediğinde
+        //var urun = await context.Urunler.FirstAsync(u => u.Id == 1515);
+        #endregion
+        #region Birden Çok Kayıt Geldiğinde
+        //var urun = await context.Urunler.FirstAsync(u => u.Id > 15);
+        #endregion
+        #endregion
+
+        #region FirstOrDefaultAsync
+        //Sorgu neticesinde elde edilen verilerden ilkini getirir. Eğer ki hiç veri gelmiyorsa null döner.
+        #region Tek Kayıt Geldiğinde
+        //var urun = await context.Urunler.FirstOrDefaultAsync(u => u.Id == 15);
+        #endregion
+        #region Hiç Kayıt Gelmediğinde
+        //var urun = await context.Urunler.FirstOrDefaultAsync(u => u.Id == 1515);
+        #endregion
+        #region Birden Çok Kayıt Geldiğinde
+        //var urun = await context.Urunler.FirstOrDefaultAsync(u => u.Id > 15);
+        #endregion
+        #endregion
+
+        #region FindAsync
+        //Find fonksiyonu, primary key kolonuna özel hızlı bir şekilde sorgulama yapmamızı sağlayan bir fonksiyondur. 
+
+        //Urun urun = await context.Urunler.FirstOrDefaultAsync(u => u.Id == 15);
+        //Urun urun = await context.Urunler.FindAsync(15);
+        #region Composite Primary key Durumu
+        //https://github.com/gncyyldz/EF-Core-Training/blob/master/Querying/Program.cs satır 213 incele. Context ve Entity'leri de incele.
+        #endregion
+        #endregion
+
+        #region LastAsync
+        //Sorgu neticesinde gelen verilerden en sonuncusunu getirir. Eğer ki hiç veri gelmiyorsa hata fırlatır. OrderBy kullanılması mecburidir.
+        //var urun = await context.Urunler.OrderBy(u => u.Fiyat).LastAsync(u => u.Id > 55);
+        #endregion
+
+        #region LastOrDefaultAsync
+        //Sorgu neticesinde gelen verilerden en sonuncusunu getirir. Eğer ki hiç veri gelmiyorsa null döner. OrderBy kullanılması mecburidir.
+        //var urun = await context.Urunler.OrderBy(u => u.Fiyat).LastOrDefaultAsync(u => u.Id > 55);
+        #endregion
+        #endregion
     }
 }
 
@@ -126,4 +202,3 @@ public class Urun
     public string UrunAdi { get; set; }
     public float Fiyat { get; set; }
 }
-
