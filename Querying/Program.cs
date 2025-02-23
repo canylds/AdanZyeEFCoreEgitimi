@@ -183,6 +183,75 @@ internal class Program
         //var urun = await context.Urunler.OrderBy(u => u.Fiyat).LastOrDefaultAsync(u => u.Id > 55);
         #endregion
         #endregion
+
+        #region Diğer Sorgulama Fonksiyonları
+        #region CountAsync
+        //Oluşturulan sorgunun execute edilmesi neticesinde kaç adet satırın elde edileceğini sayısal olarak(int) bizlere bildiren fonksiyondur.
+        //var urunler = (await context.Urunler.ToListAsync()).Count();
+        //var urunler = await context.Urunler.CountAsync();
+        #endregion
+
+        #region LongCountAsync
+        //Oluşturulan sorgunun execute edilmesi neticesinde kaç adet satırın elde edileceğini sayısal olarak(long) bizlere bildiren fonksiyondur.
+        //var urunler = await context.Urunler.LongCountAsync();
+        //var urunler = await context.Urunler.LongCountAsync(u => u.Fiyat > 5000);
+        #endregion
+
+        #region AnyAsync
+        //Sorgu neticesinde verinin gelip gelmediğini boolean türünde dönen fonksiyondur.
+        //var urunler = await context.Urunler.AnyAsync();
+
+        //var urunler = await context.Urunler.Where(u => u.UrunAdi.Contains("1")).AnyAsync();
+        //var urunler = await context.Urunler.AnyAsync(u => u.UrunAdi.Contains("1"));
+        #endregion
+
+        #region MaxAsync
+        //Verilen kolondaki max değeri getirir.
+        //var fiyat = await context.Urunler.MaxAsync(u => u.Fiyat);
+        #endregion
+
+        #region MinAsync
+        //Verilen kolondaki min değeri getirir.
+        //var fiyat = await context.Urunler.MinAsync(u => u.Fiyat);
+        #endregion
+
+        #region Distinct
+        //Sorguda mükerrer kayıtlar varsa bunları tekilleştiren bir işleve sahip fonksiyondur.
+        //var urunler = await context.Urunler.Distinct().ToListAsync();
+        #endregion
+
+        #region AllAsync
+        //Bir sorgu neticesinde gelen verilerin, verilen şarta uyup uymadığını kontrol etmektedir. Eğer ki tüm veriler şarta uyuyorsa true, uymuyorsa false döndürecektir.
+        //var check = await context.Urunler.AllAsync(u => u.Fiyat > 5000);
+        #endregion
+
+        #region SumAsync
+        //Vermiş olduğumuz sayısal proeprtynin toplamını alır.
+        //float fiyatToplam = await context.Urunler.SumAsync(u => u.Fiyat);
+        #endregion
+
+        #region AverageAsync
+        //Vermiş olduğumuz sayısal proeprtynin aritmetik ortalamasını alır.
+        //var aritmetikOrtalama = await context.Urunler.AverageAsync(u => u.Fiyat);
+        #endregion
+
+        #region Contains
+        //Like '%...%' sorgusu oluşturmamızı sağlar.
+        //var urunler = await context.Urunler.Where(u => u.UrunAdi.Contains("7")).ToListAsync();
+        #endregion
+
+        #region StartsWith
+        //Like '...%' sorgusu oluşturmamızı sağlar.
+        //var urunler = await context.Urunler.Where(u => u.UrunAdi.StartsWith("7")).ToListAsync();
+        #endregion
+
+        #region EndsWith
+        //Like '%...' sorgusu oluşturmamızı sağlar.
+        //var urunler = await context.Urunler.Where(u => u.UrunAdi.EndsWith("7")).ToListAsync();
+        #endregion
+        #endregion
+
+        Console.WriteLine();
     }
 }
 
